@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cooking Lasagna - Event Loop Demo</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <h1>Cooking Lasagna - JavaScript Event Loop</h1>
+
+    <div id="steps">
+      <div id="initialExecution" class="step">
+        1. Initial Execution (Prepping Ingredients)
+      </div>
+      <div id="promiseExecutor" class="step">
+        2. Promise Executor (Boiling Water)
+      </div>
+      <div id="callStackExecution" class="step">
+        3. Call Stack Execution (Cooking Sauce)
+      </div>
+      <div id="microtasksExecution" class="step">
+        4. Microtasks Execution (Checking Water & Adding Pasta)
+      </div>
+      <div id="taskExecution" class="step">
+        5. Task Execution (Baking & Serving)
+      </div>
+    </div>
+    <div class="stackContainer">
+      <div class="currentContainer">
+        <h2>Current Task</h2>
+        <div id="currentTask">Waiting to start Cooking...</div>
+      </div>
+
+      <div class="visualizer">
+        <h3>🔄 Event Loop Visualization</h3>
+        <h4>📌 Call Stack:</h4>
+        <div
+          id="callStack"
+          style="border: 1px solid black; padding: 10px"
+        ></div>
+
+        <h4>⌛ Pending Promises:</h4>
+        <div
+          id="pendingPromises"
+          style="border: 1px solid black; padding: 10px"
+        ></div>
+
+        <h4>🔹 Microtasks Queue:</h4>
+        <div
+          id="microtasksQueue"
+          style="border: 1px solid black; padding: 10px"
+        ></div>
+
+        <!-- <h4>🟢 Macro Tasks Queue (setTimeout):</h4>
+      <div
+        id="macroTasksQueue"
+        style="border: 1px solid black; padding: 10px"
+      ></div> -->
+      </div>
+    </div>
+    <div class="bttnContainer">
+      <button onclick="startCooking()">Start Cooking</button>
+    </div>
+
+    <script src="cooking.js"></script>
+  </body>
+</html>
