@@ -1,15 +1,30 @@
+body{
+  background:rgb(252, 253, 255);
+}
+h1 {
+  text-align: center;
+}
+.steps {
+  display: flex;
+  margin: 3rem;
+  align-items: center;
+  justify-content: center;
+}
 .step {
   padding: 15px;
   margin: 10px;
   border: 2px solid black;
   display: inline-block;
-  background-color: lightgray;
   font-size: 1.2em;
   transition: background-color 0.3s ease-in-out;
+  background-color: #33333321;
+  text-align: center;
+  display: flex;
+  width: 80%;
 }
 
 .active {
-  background-color: lightgreen;
+  background-color: #04aa6d;
 }
 
 /* Define unique colors for different event loop stages */
@@ -38,8 +53,10 @@
   font-size: 1.5em;
   margin-top: 20px;
   padding: 15px;
-  background-color: lightyellow;
+  background-color: rgb(224, 255, 238);
   border: 2px solid black;
+  border-radius: 1rem;
+  width: 100;
 }
 
 .stackContainer {
@@ -60,4 +77,31 @@ button {
 .currentContainer,
 .visualizer {
   max-width: 50%;
+}
+nav {
+  overflow: hidden;
+  background-color: #333;
+  padding: 0;
+  margin: 0;
+}
+ul {
+  list-style-type: none;
+}
+nav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+nav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+nav a.active {
+  background-color: #04aa6d;
+  color: white;
 }
