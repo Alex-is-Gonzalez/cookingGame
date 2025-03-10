@@ -4,6 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Step-Through Event Loop Demo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
@@ -15,7 +21,7 @@
     </nav>
     <h1>Step-Through JavaScript Event Loop</h1>
 
-    <div id="steps">
+    <div id="steps" class="steps">
       <div id="initialExecution" class="step">
         1. Initial Execution (Prepping Ingredients)
       </div>
@@ -40,30 +46,18 @@
       </div>
 
       <div class="visualizer">
-        <h3>🔄 Event Loop Visualization</h3>
+        <h2>🔄 Event Loop Visualization</h2>
         <h4>📌 Call Stack:</h4>
-        <div
-          id="callStack"
-          style="border: 1px solid black; padding: 10px"
-        ></div>
+        <div id="callStack" class="loopSteps"></div>
 
         <h4>⌛ Pending Promises:</h4>
-        <div
-          id="pendingPromises"
-          style="border: 1px solid black; padding: 10px"
-        ></div>
+        <div id="pendingPromises" class="loopSteps"></div>
 
         <h4>🔹 Microtasks Queue:</h4>
-        <div
-          id="microtasksQueue"
-          style="border: 1px solid black; padding: 10px"
-        ></div>
+        <div id="microtasksQueue" class="loopSteps"></div>
 
         <h4>🕒 Macrotasks Queue:</h4>
-        <div
-          id="macrotasksQueue"
-          style="border: 1px solid black; padding: 10px"
-        ></div>
+        <div id="macrotasksQueue" class="loopSteps"></div>
       </div>
     </div>
 

@@ -4,6 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cooking Lasagna - Event Loop Demo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
@@ -15,7 +18,7 @@
     </nav>
     <h1>Cooking Lasagna - JavaScript Event Loop</h1>
 
-  <div id="steps">
+  <div id="steps" class="steps">
   <div id="initialExecution" class="step">1. Initial Execution (Prepping Ingredients)</div>
   <div id="promiseExecutor" class="step">2. Promise Executor (Boiling Water)</div>
   <div id="callStackExecution" class="step">3. Call Stack Execution (Cooking Sauce)</div>
@@ -32,29 +35,29 @@
       </div>
 
       <div class="visualizer">
-        <h3>🔄 Event Loop Visualization</h3>
+        <h2>🔄 Event Loop Visualization</h2>
         <h4>📌 Call Stack:</h4>
         <div
           id="callStack"
-          style="border: 1px solid black; padding: 10px"
+          class="loopSteps"
         ></div>
 
         <h4>⌛ Pending Promises:</h4>
         <div
           id="pendingPromises"
-          style="border: 1px solid black; padding: 10px"
+          class="loopSteps"
         ></div>
 
         <h4>🔹 Microtasks Queue:</h4>
         <div
           id="microtasksQueue"
-          style="border: 1px solid black; padding: 10px"
+          class="loopSteps"
         ></div>
 
         <h4>🟢 Macro Tasks Queue (setTimeout):</h4>
         <div
           id="macroTasksQueue"
-          style="border: 1px solid black; padding: 10px"
+          class="loopSteps"
         ></div>
       </div>
     </div>

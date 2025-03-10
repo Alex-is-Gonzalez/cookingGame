@@ -14,26 +14,35 @@ const steps = [
   {
     id: "callStackExecution",
     description: "🍳 Cooking sauce while waiting for water.",
-    color: "lightblue",
+    color: "gold",
     callStack: "🍳 Cooking sauce",
+    pendingPromise: "🔥 Waiting for water to boil (Promise Pending)",
   },
   {
     id: "microtasksExecution",
     description: "🛠 Checking boiling water & adding pasta.",
     color: "lightgreen",
-    microtasks: [
-      "✅ Checking if water is boiling...",
-      "🍝 Adding pasta to boiling water...",
-    ],
+    callStack: "🍳 Cooking sauce",
+    pendingPromise: "🔥 Waiting for water to boil (Promise Pending)",
+    microtasks: ["✅ Checking if water is boiling..."],
+  },
+  {
+    id: "microtasksExecution",
+    description: "🛠 Checking boiling water & adding pasta.",
+    color: "lightgreen",
+    microtasks: ["🍝 Adding pasta to boiling water..."],
   },
   {
     id: "taskExecution",
     description: "🍽 Assembling and baking the lasagna.",
-    color: "purple",
-    macrotasks: [
-      "⏳ Timer set for baking...",
-      "🚪 Opening oven to check lasagna...",
-    ],
+    color: "#0079FF",
+    macrotasks: ["⏳ Timer set for baking..."],
+  },
+  {
+    id: "taskExecution",
+    description: "🍽 Assembling and baking the lasagna.",
+    color: "#0079FF",
+    macrotasks: ["🚪 Opening oven to check lasagna..."],
   },
 ];
 
