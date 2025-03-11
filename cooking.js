@@ -22,18 +22,20 @@ function addMicrotask(taskDescription) {
   }, 5000);
 }
 
-function addMacrotask(taskDescription, color, duration = 5000) {
+async function addMacrotask(taskDescription, color, duration = 5000) {
   return new Promise((resolve) => {
     let macroTasksQueue = document.getElementById("macroTasksQueue");
+
     let taskElement = document.createElement("div");
     taskElement.textContent = taskDescription;
     taskElement.classList.add("macrotask");
-    taskElement.style.backgroundColor = color; // Apply color to the macrotask element
+    taskElement.style.backgroundColor = color;
+
     macroTasksQueue.appendChild(taskElement);
 
     setTimeout(() => {
       macroTasksQueue.removeChild(taskElement);
-      resolve(); // Ensure macrotask completes before proceeding
+      resolve();
     }, duration);
   });
 }
@@ -98,6 +100,10 @@ async function startCooking() {
 
   await new Promise((resolve) => setTimeout(resolve, 5000)); // Ensure delay before checking water
 
+  document.getElementById("pendingPromises").innerHTML = "";
+  let checkStep = document.getElementById("microtasksExecution");
+  checkStep.classList.add("active");
+  checkStep.style.backgroundColor = "lightgreen";
   addMicrotask("✅ Checking if water is boiling...");
   await new Promise((resolve) => setTimeout(resolve, 3000));
   addMicrotask("🍝 Adding pasta to boiling water...");
@@ -109,19 +115,23 @@ async function startCooking() {
     "lightgreen"
   );
 
-  document.getElementById("pendingPromises").innerHTML = "";
-
   await highlightStep(
     "taskExecution",
-    5000,
+    0,
     "🍽 **Task Execution:** Assembling and baking the lasagna.",
-    "#0079FF"
+    "red"
   );
 
-  // Adding macrotasks (Baking lasagna steps)
   console.log("Starting macrotasks for baking...");
 
-  await addMacrotask("⏳ Timer set for baking...", "orange");
+  highlightStep(
+    "taskExecution",
+    10000,
+    "🍽 **Task Execution Continues:** Baking and checking lasagna.",
+    "red"
+  );
+
+  await addMacrotask("⏳ Timer set for baking...", "red");
   await addMacrotask("🚪 Opening oven to check lasagna...", "red");
 
   console.log("Lasagna is ready to serve!");
