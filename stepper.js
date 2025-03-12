@@ -14,7 +14,7 @@ const steps = [
   {
     id: "callStackExecution",
     description: "🍳 Cooking sauce while waiting for water.",
-    color: "#16C47F",
+    color: "#3DB2FF",
     callStack: "🍳 Cooking sauce",
     pendingPromise: "🔥 Waiting for water to boil (Promise Pending)",
   },
@@ -83,6 +83,8 @@ function addMicrotask(taskDescription, color) {
   let taskElement = document.createElement("div");
   taskElement.textContent = taskDescription;
   taskElement.style.backgroundColor = color;
+  taskElement.style.width = "100%"; // Ensures it fits inside
+  taskElement.style.wordBreak = "break-word"; // Prevents overflow issues
   microtasksQueue.appendChild(taskElement);
 }
 
