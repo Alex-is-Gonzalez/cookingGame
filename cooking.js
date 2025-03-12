@@ -4,6 +4,7 @@ async function highlightStep(stepId, duration, description, color) {
 
   step.classList.add("active");
   step.style.backgroundColor = color;
+  step.style.color = "black";
   currentTask.innerHTML = description;
 
   await new Promise((resolve) => setTimeout(resolve, duration));
@@ -15,6 +16,7 @@ function addMicrotask(taskDescription) {
   let taskElement = document.createElement("div");
   taskElement.textContent = taskDescription;
   taskElement.classList.add("microtask");
+  taskElement.style.backgroundColor = "#16C47F";
   microtasksQueue.appendChild(taskElement);
 
   setTimeout(() => {
@@ -77,7 +79,7 @@ async function startCooking() {
 
   let boilingStep = document.getElementById("promiseExecutor");
   boilingStep.classList.add("active");
-  boilingStep.style.backgroundColor = "lightcoral";
+  boilingStep.style.backgroundColor = "#EB5353";
   document.getElementById("currentTask").innerHTML = `
     <span>🚰 Filling a pot and placing it on the stove.</span>
     <br>
@@ -85,7 +87,10 @@ async function startCooking() {
   `;
 
   console.log("Promise executor started - Water is boiling");
-  addPendingPromise("🔥 Waiting for water to boil (Promise Pending)");
+  addPendingPromise(
+    "🔥 Waiting for water to boil (Promise Pending)",
+    "#36AE7C"
+  );
 
   setTimeout(async () => {
     console.log("Call stack execution - Cooking sauce while waiting for water");
@@ -94,7 +99,7 @@ async function startCooking() {
       "callStackExecution",
       5000,
       "🍳 **Cooking sauce while waiting for water.** Example: Sautéing onions, browning meat, adding tomato sauce.",
-      "lightblue"
+      "#3DB2FF"
     );
   }, 3000); // Sauce starts after 3s
 
@@ -103,7 +108,7 @@ async function startCooking() {
   document.getElementById("pendingPromises").innerHTML = "";
   let checkStep = document.getElementById("microtasksExecution");
   checkStep.classList.add("active");
-  checkStep.style.backgroundColor = "lightgreen";
+  checkStep.style.backgroundColor = " #16C47F";
   addMicrotask("✅ Checking if water is boiling...");
   await new Promise((resolve) => setTimeout(resolve, 3000));
   addMicrotask("🍝 Adding pasta to boiling water...");
@@ -112,14 +117,14 @@ async function startCooking() {
     "microtasksExecution",
     5000,
     "🛠 **Microtasks Execution:** Checking boiling water & adding pasta.",
-    "lightgreen"
+    "#16C47F"
   );
 
   await highlightStep(
     "taskExecution",
     0,
     "🍽 **Task Execution:** Assembling and baking the lasagna.",
-    "red"
+    "#8B5DFF"
   );
 
   console.log("Starting macrotasks for baking...");
@@ -128,11 +133,11 @@ async function startCooking() {
     "taskExecution",
     10000,
     "🍽 **Task Execution Continues:** Baking and checking lasagna.",
-    "red"
+    "#8B5DFF"
   );
 
-  await addMacrotask("⏳ Timer set for baking...", "red");
-  await addMacrotask("🚪 Opening oven to check lasagna...", "red");
+  await addMacrotask("⏳ Timer set for baking...", "#8B5DFF");
+  await addMacrotask("🚪 Opening oven to check lasagna...", "#8B5DFF");
 
   console.log("Lasagna is ready to serve!");
   document.getElementById("currentTask").innerHTML =

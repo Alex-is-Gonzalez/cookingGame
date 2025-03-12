@@ -5,7 +5,7 @@ body {
   font-style: normal;
 
 }
-h1 {
+h, h2 {
   text-align: center;
 }
 .steps {
@@ -27,23 +27,25 @@ h1 {
   text-align: center;
   display: flex;
   width: 80%;
+  height: auto;
   color: #F1F0E9;
   border-radius: .5rem;
 }
 
 .active {
-  background-color: #04aa6d;
+  background-color: #16C47F;
+  color: black;
 }
 
 /* Define unique colors for different event loop stages */
 .microtask {
-  background-color: lightblue !important;
+  background-color: #16C47F !important;
 }
 .callstack {
   background-color: gold !important;
 }
 .pending-promise {
-  background-color: lightcoral !important;
+  background-color: #EB5353 !important;
 }
 .task {
   background-color: orange !important;
@@ -92,6 +94,8 @@ button:hover{
 .bttnContainer {
   display: flex;
   margin-top: 4rem;
+  align-items: center;
+  justify-content: center;
 }
 
 .currentContainer,
@@ -138,4 +142,11 @@ nav a.active {
   background-color: #E9762B;
   color: white;
   border-radius: 1rem;
+}
+@media (max-width: 960px) {
+  .stackContainer{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 }
